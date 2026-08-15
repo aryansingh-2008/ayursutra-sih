@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-vata-50: #f6f8f5;
+  --color-vata-100: #eaf0e6;
+  --color-forest-600: #1f6f5c;
+  --color-forest-700: #175647;
+  --color-forest-800: #123f34;
+  --color-moss-400: #7a9e7e;
+  --color-moss-500: #628a67;
+  --color-clay-500: #c97b2e;
+  --color-clay-600: #ab6522;
+  --color-rose-500: #b3543f;
+  --color-ink-900: #1c2420;
+  --color-ink-700: #3c463f;
+  --color-ink-500: #6b756e;
+  --color-sand-50: #fbfaf7;
+  --color-sand-100: #f3f0e8;
+}
+
+html, body { background: var(--color-sand-50); }
+body { font-family: var(--font-body); color: var(--color-ink-900); }
+h1, h2, h3, .font-display { font-family: var(--font-display); }
+.font-mono-num { font-family: var(--font-mono); }
+
+::selection { background: var(--color-forest-600); color: white; }
+
+@keyframes leaf-draw {
+  from { stroke-dashoffset: 240; }
+  to { stroke-dashoffset: 0; }
+}
+.animate-leaf-draw { stroke-dasharray: 240; animation: leaf-draw 1.4s ease forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
