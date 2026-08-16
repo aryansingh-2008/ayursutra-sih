@@ -1,7 +1,7 @@
 const configuredBase = import.meta.env.VITE_API_URL?.trim();
 const BASE = configuredBase
   ? configuredBase.replace(/\/$/, "")
-  : "/api";
+  : "https://ayursutra-sih-g9gn.onrender.com";
 
 function getToken() {
   return localStorage.getItem("ayursutra_token");
